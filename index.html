@@ -7,8 +7,22 @@
 
 <body>
 
-<script src="https://gumroad.com/js/gumroad-embed.js"></script>
-<div class="gumroad-product-embed" data-gumroad-product-id="DfGfd"><a href="https://gumroad.com/l/DfGfd">Loading...</a></div>
+    <label for="product1">Enter the price of the product:</label>
+    <input id="product1" type="number" name="product1" value="1" step="1" min="0" max="100" data-link="https://gumroad.com/l/DfGfd/">
+    <button onclick="setPrice()">Buy Gumroad</button>
+
+    <script>
+        function setPrice() {
+            var input = document.getElementById("product1");
+            var off = +input.value;
+
+            var price = 100 - off;
+            var url = input.dataset.link;
+
+            window.open(url + "price" + price, '_blank');
+
+        }
+    </script>
 
 </body>
 
