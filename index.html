@@ -14,12 +14,16 @@
     <script>
         function setPrice() {
             var input = document.getElementById("product1");
-            var off = +input.value;
+            var price = +input.value;
 
-            var price = 100 - off;
+            // var price = 100 - off;
             var url = input.dataset.link;
 
-            window.open(url + "price" + price, '_blank');
+            if (price === 100) {
+                window.open(url, '_blank');
+            } else {
+                window.open(url + "price" + price, '_blank');
+            }
 
         }
     </script>
